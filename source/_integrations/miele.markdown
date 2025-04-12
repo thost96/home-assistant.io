@@ -67,7 +67,7 @@ The integration configuration will ask for the *Client ID* and *Client Secret* c
 {% note %}
 
 - The entities' availability depends on the appliance type and the generation of the product, and the appliance might not support all the entities for its type.
-- Products from professional and semi-professional series are generally not supported due to limitations in the Miele 3rd party API.
+- Products from professional and semi-professional series are generally not supported due to the limitations in the Miele 3rd party API.
 - Some appliances don't report data while they are turned off, so corresponding entities will not appear in the Miele integration after loading until the appliances are turned on.
 {% endnote %}
 
