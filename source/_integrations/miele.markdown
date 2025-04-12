@@ -76,8 +76,8 @@ The integration configuration will ask for the *Client ID* and *Client Secret* c
 {% details "List of sensors" %}
 
 - **Operation state**:
-  - **Status**: Represents the current operation state of the device. The default entity name is just the appliance type e.g. "Dishwasher".
-  - **Temperature**: Represents current temperature in refrigerators, freezers and ovens. Entities are created for up to 3 zones depending on the device capabilities.
+  - **Status**: Represents the current operation state of the device. The default entity name is just the appliance type e.g., "Dishwasher".
+  - **Temperature**: Represents the current temperature in refrigerators, freezers and ovens. Entities are created for up to 3 zones depending on the device capabilities.
 {% enddetails %}
 
 ## Automation examples
