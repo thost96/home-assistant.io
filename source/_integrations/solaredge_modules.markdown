@@ -33,7 +33,7 @@ To set up the integration, you need a username and password with access to the [
 
 ## Known limitations
 
-- The integration intentionally doesn't create any sensors. All data is only available in statistics.
+- The integration intentionally doesn't create any sensors. All data is only available in statistics. This is because data is often delayed by a couple of hours.
 - The statistics are intentionally updated infrequently. If you want more frequent updates, you can call the [`homeassistant.reload_config_entry`](/integrations/homeassistant/#action-homeassistantreload_config_entry) action from an automation.
 - The API provides data at a 15-minute interval, but Home Assistant long-term statistics are limited to a 1-hour interval.
 
