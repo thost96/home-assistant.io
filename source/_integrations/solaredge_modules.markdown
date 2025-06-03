@@ -13,7 +13,7 @@ ha_codeowners:
 ha_integration_type: service
 ---
 
-The SolarEdge integration allows you to get energy production per inverter/string/module from your SolarEdge solar power setup and insert them into Home Assistant statistics.
+The SolarEdge Modules integration allows you to retrieve energy production data per inverter, string, and module from your SolarEdge solar power setup and insert it into Home Assistant statistics.
 
 You can find the created statistics in **Developer Tools** > **Statistics** and searching for `solaredge_modules`.
 You can show them in the UI using the [`Statistic card`](/dashboards/statistic/) or [`Statistics graph card`](/dashboards/statistics-graph/).
@@ -23,7 +23,7 @@ The main use case is to track your solar production per module to identify any f
 
 The integration fetches energy production for the past 7 days every 12 hours and inserts the data into statistics.
 
-To set up the integration you need your username/password that has access to the [SolarEdge web portal](https://monitoring.solaredge.com/). You also need the site ID which you can get from the URL once you log-in, e.g. `1234` for `https://monitoring.solaredge.com/solaredge-web/p/site/1234/`
+To set up the integration, you need a username and password with access to the [SolarEdge web portal](https://monitoring.solaredge.com/). You also need the site ID, which you can get from the URL once you log in (for example, `1234` from `https://monitoring.solaredge.com/solaredge-web/p/site/1234/`).
 
 {% include integrations/config_flow.md %}
 
@@ -35,7 +35,7 @@ To set up the integration you need your username/password that has access to the
 
 - The integration intentionally doesn't create any sensors. All data is only available in statistics.
 - The statistics are intentionally updated infrequently. If you want more frequent updates, you can call the [`homeassistant.reload_config_entry`](/integrations/homeassistant/#action-homeassistantreload_config_entry) action from an automation.
-- The API provides data at 15 minutes interval, but Home Assistant long-term statistics can only be at a 1 hour interval.
+- The API provides data at a 15-minute interval, but Home Assistant long-term statistics are limited to a 1-hour interval.
 
 ## Troubleshooting
 
