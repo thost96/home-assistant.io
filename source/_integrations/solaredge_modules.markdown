@@ -79,7 +79,7 @@ days_to_show: 30
 To identify problematic modules, you could set up the [`SQL`](/integrations/sql/) integration with the following:
 
 {% note %}
-The SQL code contains a couple of TODOs for you to adjust the threshold and to select the proper modules based on your solar installation. In the example the panels on the east side have ` 1.1.` while the ones on the west have ` 1.2.`.
+The SQL code contains a couple of to-dos for you to adjust the threshold and to select the proper modules based on your solar installation. In the example, the panels on the east side contain "1.1." in their name while the ones on the west contain "1.2.".
 {% endnote %}
 
 Name: SolarEdge low production modules (East)
