@@ -69,6 +69,7 @@ stat_types:
 title: Daily production per module on east side
 days_to_show: 30
 ```
+
 ### SQL
 
 To identify problematic modules, you could set up the [`SQL`](/integrations/sql/) integration with the following:
@@ -128,7 +129,7 @@ WHERE
 ```
 
 This will result in a sensor with state e.g.: `SolarEdge 1.1.13 (95.7%), SolarEdge 1.1.14 (95.2%)`
-You can use this sensor in automations, e.g to notify you if its value changes.
+You can use this sensor in automations, e.g., to notify you if its value changes.
 
 ## Removing the integration
 
