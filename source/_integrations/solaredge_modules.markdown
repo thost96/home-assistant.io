@@ -33,10 +33,10 @@ To set up the integration, you need a username and password with access to the [
 
 An example of a Statistics graph that shows hourly production per module for the past 7 days.
 
-![Screenshot hourly production Statistics graph](/images/integrations/solaredge_modules/hourly_production.png)
+![Screenshot of hourly production per module graph](/images/integrations/solaredge_modules/hourly_production.png)
 
 {% note %}
-The statistic IDs below are examples. It's recommended to press on **SHOW VISUAL EDITOR** to select the statistics based on their name instead.
+The statistic IDs below are examples. It's recommended to use **SHOW VISUAL EDITOR** to select the statistics by name instead.
 {% endnote %}
 
 ```yaml
@@ -57,7 +57,7 @@ title: Hourly production per module on east side
 Another example of a Statistics graph that shows daily production per module for the past 7 days.
 It's easier here to identify any problematic modules.
 
-![Screenshot daily production Statistics graph](/images/integrations/solaredge_modules/daily_production.png)
+![Screenshot of daily production per module graph](/images/integrations/solaredge_modules/daily_production.png)
 
 ```yaml
 chart_type: line
@@ -123,17 +123,21 @@ AverageProduction AS (
     WHERE total_production > 0
 )
 SELECT
-    GROUP_CONCAT(
-        mp.name || ' (' || printf("%.1f", (mp.total_production * 100.0 / ap.average_total_production)) || '%)',
-        ', '
+    IFNULL(
+        GROUP_CONCAT(
+            mp.name || ' (' || printf("%.1f", (mp.total_production * 100.0 / ap.average_total_production)) || '%)',
+            ', '
+        ),
+        ''
     ) AS problematic_modules
 FROM
     ModuleProduction mp, AverageProduction ap -- Implicit cross join, AP will have 1 row
 WHERE
     -- TODO: Adjust the 96% threshold if needed
     mp.total_production < (0.96 * ap.average_total_production)
+    AND ap.average_total_production IS NOT NULL
     AND ap.average_total_production > 0 -- Avoid division by zero if no production at all
-)
+) AS result
 ```
 
 This will result in a sensor with state e.g.: `SolarEdge 1.1.13 (95.7%), SolarEdge 1.1.14 (95.2%)`
