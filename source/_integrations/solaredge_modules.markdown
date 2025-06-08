@@ -54,7 +54,7 @@ days_to_show: 7
 title: Hourly production per module on east side
 ```
 
-Another example of a Statistics graph that shows daily production per module for the past 7 days.
+Another example of a Statistics graph that shows daily production per module for the past 30 days.
 It's easier here to identify any problematic modules.
 
 ![Screenshot of daily production per module graph](/images/integrations/solaredge_modules/daily_production.png)
@@ -79,7 +79,7 @@ days_to_show: 30
 To identify problematic modules, you could set up the [`SQL`](/integrations/sql/) integration with the following:
 
 {% note %}
-The SQL code contains a couple of to-dos for you to adjust the threshold and to select the proper modules based on your solar installation. In the example, the panels on the east side contain "1.1." in their name while the ones on the west contain "1.2.".
+The SQL code contains a couple of TODO items for you to adjust the threshold and to select the proper modules based on your solar installation. In the example, the panels on the east side contain "1.1." in their name while the ones on the west contain "1.2.".
 {% endnote %}
 
 Name: SolarEdge low production modules (East)
@@ -140,7 +140,7 @@ WHERE
 ) AS result
 ```
 
-This will result in a sensor with state e.g., `SolarEdge 1.1.13 (95.7%), SolarEdge 1.1.14 (95.2%)`
+This will result in a sensor with state ,e.g., `SolarEdge 1.1.13 (95.7%), SolarEdge 1.1.14 (95.2%)`
 
 Because this SQL sensor will unnecessarily be updating every 30 seconds, in the [SQL integration entries page](https://my.home-assistant.io/redirect/integration/?domain=sql), select 3 dots, **System options**, uncheck **Enable polling for changes**, and select **UPDATE**.
 
