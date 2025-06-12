@@ -188,7 +188,7 @@ To migrate a Z-Wave network to a new controller, follow these steps:
 
 The frequency used by Z-Wave devices depends on your region. For each country or region, the Z-Wave product has to apply the standard Z-Wave frequency approved for that region. This means that when you buy a Z-Wave product, you need to make sure it is approved for your region. For example, when you live in Europe, it is not allowed to use a device that is using a US frequency.
 
-During onboarding of your controller, the region of your Home Assistant is used to determine which radio frequency region this controller is using. If needed, you can change the radio frequency region for your controller. However, the region of the device cannot be changed. It only works in the frequency region it was specified for.
+During onboarding of your controller, the region of your Home Assistant is used to determine which radio frequency region this controller is using. If needed, you can change the radio frequency region for your controller. However, the region of end devices cannot be changed. They only work in the frequency region they were specified for.
 
 ### Prerequisites
 
