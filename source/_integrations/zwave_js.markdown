@@ -190,6 +190,11 @@ The frequency used for Z-Wave depends on your region. For each country or region
 
 During onboarding of your controller, the region of your Home Assistant is used to determine the region in the Z-Wave JS add-on. If needed, you can change this radio frequency region for your controller. However, the region of the device cannot be changed. It only works in the frequency region it was specified for.
 
+### Prerequisites
+
+- Administrator rights in Home Assistant
+- All your Z-Wave devices must be specified for that region
+
 ### To change the radio frequency region of your Z-Wave controller
 
 1. Go to {% my supervisor_addon addon="core_zwave_js" title="**Settings** > **Add-ons** > **Z-Wave JS**" %}.
