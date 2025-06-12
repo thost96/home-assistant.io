@@ -9,8 +9,6 @@ related:
   - docs: /docs/organizing/labels/
 ---
 
-## Customizing an entity
-
 After adding a new device, you might find the automatically assigned entity ID too technical and the entity lacking a friendly name. You can personalize these elements to better fit your naming conventions or modify other attributes like the icon.
 
 To change entity attributes, follow these steps:
