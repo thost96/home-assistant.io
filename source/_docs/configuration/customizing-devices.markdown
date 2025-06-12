@@ -16,7 +16,7 @@ After adding a new device, you might find the automatically assigned entity ID t
 To change entity attributes, follow these steps:
 
 1. Go to {% my entities title="**Settings** > **Devices & services** > **Entities**" %} and select the entity from the list.
-2. In the top right corner, select the cog icon.
+2. In the top right corner, select the {% icon "mdi:cog" %} cog icon.
 
    ![Entity dialog box with cog icon.](/images/docs/configuration/customizing-entity-dialog.png)
 
@@ -25,6 +25,7 @@ To change entity attributes, follow these steps:
      - Do not change the domain of the entity - the part before the `.` (binary_sensor, in this example).
      - You can use lowercase letters, numbers, and underscores.
      - The ID must not start or end with an underscore.
+     - To undo the change and revert the ID to the default, select the {% icon "mdi:restore" %} icon.
    - Enter or edit the friendly name.
    - If needed, from the **Shown as** menu, you can select a different [device class](/integrations/homeassistant/#device-class).
    - If you like, add a [label](/docs/organizing/labels/).
