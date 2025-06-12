@@ -26,6 +26,10 @@ To change entity attributes, follow these steps:
      - You can use lowercase letters, numbers, and underscores.
      - The ID must not start or end with an underscore.
      - To undo the change and revert the ID to the default, select the {% icon "mdi:restore" %} icon.
+     - To revert all the entity IDs for a device, on the device page, select the three dots {% icon "mdi:dots-vertical" %} menu, then select **Recreate entity IDs**.
+
+        ![revert all entity IDs for a device from the device page](/images/docs/configuration/device-page-revert-entity-id.png)
+
    - Enter or edit the friendly name.
    - If needed, from the **Shown as** menu, you can select a different [device class](/integrations/homeassistant/#device-class).
    - If you like, add a [label](/docs/organizing/labels/).
