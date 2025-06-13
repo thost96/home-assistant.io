@@ -184,7 +184,6 @@ To migrate a Z-Wave network to a new controller, follow these steps:
    - Confirm that you connected the new controller by selecting **Submit**.
 6. Follow the steps on screen.
 
-
 ## Setting the radio frequency region of the controller in the Z-Wave JS add-on
 
 The frequency used by Z-Wave devices depends on your region. For each country or region, the Z-Wave product has to apply the standard Z-Wave frequency approved for that region. This means that when you buy a Z-Wave product, you need to make sure it is approved for your region.
