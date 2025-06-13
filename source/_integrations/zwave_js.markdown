@@ -184,6 +184,7 @@ To migrate a Z-Wave network to a new controller, follow these steps:
    - Confirm that you connected the new controller by selecting **Submit**.
 6. Follow the steps on screen.
 
+
 ## Setting the radio frequency region of the controller in the Z-Wave JS add-on
 
 The frequency used by Z-Wave devices depends on your region. For each country or region, the Z-Wave product has to apply the standard Z-Wave frequency approved for that region. This means that when you buy a Z-Wave product, you need to make sure it is approved for your region.
@@ -194,7 +195,7 @@ If you are using the Z-Wave JS add-on, the country of your Home Assistant is use
 
 - Administrator rights in Home Assistant
 - All your Z-Wave devices must be specified for that region
-- Note: this procedure only applies if your controller is [set-up using the Z-Wave JS add-on](#setting-up-a-z-wave-js-server)
+- Note: this procedure only applies if your controller is [set up using the Z-Wave JS add-on](#setting-up-a-z-wave-js-server)
 
 ### To change the radio frequency region of your Z-Wave controller
 
@@ -203,6 +204,44 @@ If you are using the Z-Wave JS add-on, the country of your Home Assistant is use
 3. In the **Options** section, select the **Radio Frequency Region**.
 4. To apply your changes, select **Save**.
    - Your Z-Wave controller is now ready to communicate with devices that were specified for that region.
+
+## Backing up your Z-Wave network
+
+It's recommended to create a backup before making any major changes to your Z-Wave network. For example, before migrating from one controller to another, or before resetting your controller. The backup stores your Z-Wave controller's non-volatile memory (NVM), which contains your network information including paired devices. It is stored in a binary file that you can download.
+
+### Prerequisites
+
+- Administrator rights in Home Assistant
+
+### To backup your Z-Wave network
+
+1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
+2. Select the **Z-Wave** integration. Then, select **Configure**.
+3. Under **Backup and restore**, select **Download backup**.
+   - **Result**: The backup file is downloaded to the device from which you initiated the download.
+4. Done! Store the backup file somewhere safe in case you need it later to restore your Z-Wave network.
+
+## Resetting a Z-Wave controller
+
+It is recommended to back up your Z-Wave network before resetting the device.
+
+- The controller will forget all devices it is paired with.
+- All Z-Wave devices for this network will be removed from Home Assistant.
+- If there are any devices still paired with the controller when it is reset, they will have to go through the exclusion process before they can be re-paired.
+- The device firmware will remain on the device.
+
+### Prerequisites
+
+- Administrator rights on Home Assistant
+
+### To reset a Z-Wave controller
+
+1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
+2. Select the **Z-Wave** integration. Then, select the controller.
+3. Under **Device info**, select the three dots {% icon "mdi:dots-vertical" %} menu, then select **Factory reset**.
+
+    ![Screenshot showing the device panel of a Z-Wave controller](/images/integrations/z-wave/z-wave-controller-commands.png)
+4. Once the process is finished, you can use this controller to start a new network, or pass it on to someone else.
 
 ## Special Z-Wave entities
 
@@ -242,19 +281,6 @@ Some features can be accessed from the menu of integration itself. As they are n
 ![Z-Wave integration configuration panel](/images/integrations/z-wave/z-wave-integration-menu.png)
 
 - **[Download diagnostics](/docs/configuration/troubleshooting/#download-diagnostics):** Exports a JSON file describing the entities of all devices registered with this integration.
-
-### Device panel
-
-#### Controller
-
-The following features can be accessed from the device panel of a Z-Wave controller:
-
-- **Factory reset:** Exercise extreme caution when using this action! Once initiated, your controller will be reset to factory settings, it will forget all devices it is paired with, it will establish a new network ID that will prevent any recovery of your old network, and all Z-Wave devices for this network will be removed from Home Assistant. If there are any devices still paired with the controller when it is reset, they will have to go through the exclusion process before they can be re-paired.
-
-<p class='img'>
-<img src='/images/integrations/z-wave/z-wave-controller-commands.png' alt='Screenshot showing the device panel of a Z-Wave controller' />
-Screenshot showing the device panel of a Z-Wave controller.
-</p>
 
 #### Network devices
 
@@ -861,7 +887,7 @@ You can also keep track of the road map for the Z-Wave integration [here](https:
 
 ### Which Z-Wave controller should I buy?
 
-Z-Wave supports all known 500 and 700 series Z-Wave controllers. If you are just starting out, we recommend that you purchase a 700 series controller (with firmware updated to >=7.17.2).
+Z-Wave supports all known 500-, 700-, and 800-series Z-Wave controllers. If you are just starting out, we recommend that you purchase a 800-series controller (with firmware updated to >=7.23.2).
 
 For more information, see [Supported Z-Wave dongles](/docs/z-wave/controllers/#supported-z-wave-usb-sticks--hardware-modules)
 
@@ -988,7 +1014,7 @@ If the interview is complete, then the device does not yet have a device file fo
 When trying to determine why something isn't working as you expect, or when reporting an issue with the integration, it is helpful to know what Z-Wave JS sees as the current state of your Z-Wave network. To get a dump of your current network state, follow these steps:
 
 1. Go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the **Z-Wave** integration. Then, select the three dots.
+2. Select the **Z-Wave** integration. Then, select the three dots {% icon "mdi:dots-vertical" %} menu.
 3. From the dropdown menu, select **Download diagnostics**.
 
 ### How do I address interference issues?
