@@ -12,7 +12,6 @@ ha_domain: bauknecht
 ha_codeowners:
   - '@abmantis'
   - '@mkmer'
-  - '@thost96'
 ha_config_flow: true
 ha_platforms:
   - binary_sensor
