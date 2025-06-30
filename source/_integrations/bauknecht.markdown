@@ -7,7 +7,7 @@ ha_category:
 ha_integration_type: virtual
 ha_supporting_domain: whirlpool
 ha_supporting_integration: Whirlpool Appliances
-ha_release: '2022.10'
+ha_release: '2025.8'
 ha_domain: bauknecht
 ha_codeowners:
   - '@abmantis'
