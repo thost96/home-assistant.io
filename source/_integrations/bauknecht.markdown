@@ -2,7 +2,6 @@
 title: Bauknecht
 description: Connect and control your Bauknecht devices using the Whirlpool Appliances integration
 ha_category:
-  - Utility
   - Hub
 ha_integration_type: virtual
 ha_supporting_domain: whirlpool
